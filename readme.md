@@ -1,4 +1,33 @@
+# L1.3 Summary
+# CHECKLIST: SETTING UP
+# Define the base path
+<base href="/">
 
+# Import RouterModule
+* Use RouterModule.forRoot() for app routes (one time only)
+* Use RouterModule.forChild() for features
+
+# CHECKLIST: CONFIGURING ROUTES
+
+# path: Url segment(s) for the route
+* No leading slash
+* ''for default route; '**' for wildcard route 
+* casing matters
+
+# component
+* Not string name; not enclosed in quotes
+* component must be imported
+
+# order matters
+
+# ACTIVATING A ROUTE
+
+# Add the RouterLink directive as an attribute
+* Clickable element
+* Enclose in square brackets
+
+# Bind to a link parameters array
+* First element is the route Url segment
 
 # L1.0 npm install
 
