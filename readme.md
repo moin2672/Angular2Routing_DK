@@ -1,3 +1,28 @@
+# L3.1 routing with params
+
+* populating route parameters
+
+<a [routerLink] = "['/products',product.id]">{{product.productName}}</a>
+<a [routerLink] = "['/products',product.id,'edit']">Edit</a>
+<a [routerLink] = "['/products',0,'edit']">Add Product</a>
+
+this.router.navigate(['/product',this.product.id]);
+
+* Reading route parameters
+
+use ActivatedRoute service
+
+constructor( private route: ActivatedRoute) {}
+
+let id = this.route.snapshot.params['id'];
+
+observable
+----------
+
+this.route.params.subscribe(
+params => { let id = params['id'] }
+);
+
 # L2.2 Summary
 
 # Routing to Features Checklist: 
