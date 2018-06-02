@@ -1,3 +1,10 @@
+# L2.0
+ RouterModule.forChild([
+      {path: 'products', component: ProductListComponent}
+    ])
+
+* Routing for child
+
 # L1.3 Summary
 # CHECKLIST: SETTING UP
 # Define the base path
