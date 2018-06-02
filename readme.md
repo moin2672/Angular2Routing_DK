@@ -1,3 +1,34 @@
+# L2.2 Summary
+
+# Routing to Features Checklist: 
+##Configuration
+
+* Import RouterModule
+Be sure to use RouterModule.forChild()
+
+* Configure the routes
+
+## Naming Routes
+
+* Use a common root path name for related feature routes
+
+- product
+- products/:id
+- products/:id/edit
+
+## Activate with code
+* Import the Router
+* Add a dependency on the Router service
+- As a constructor parameter
+* Use the Router service navigate method
+* Pass in a link parameters array
+- First element is the rool Url segment
+- All other elements are route parameters or additional Url segments
+
+## Routing Modules
+* Seperate out routes to their own routing module
+* Keep route path order in mind
+
 # L2.1 Routing user login
 Activating a Route with code
 // standard syntax
