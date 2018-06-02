@@ -1,3 +1,48 @@
+# L3.2 routing with params using observable
+* Reading Route Parameters
+
+Snaphot
+
+1. To read the parameters only once 
+2. simple code
+3. Eg:
+let id = this.route.snapshot.params['id'];
+
+Observable
+
+1. To watch for parameter changes
+2. More complex code
+3. Eg:
+this.route.params.subscribe(
+   params=>{
+	  let id = params['id'];
+	}
+);
+
+* Reading Route Parameters (v4+) --> snapshot
+
+import {ActivatedRoute} from '@angular/router';
+
+...
+
+	constructor (private route: ActivatedRoute) {
+		console.log(this.route.snapsot.paramMap.get('id');
+	}
+
+* Reading Route Parameters (v4+) --> subscribe
+
+import {ActivatedRoute} from '@angular/router';
+
+...
+
+	constructor(private route: ActivatedRoute){
+		this.route.paramMap.subscribe(
+			params => {
+				console.log(params.get('id'));
+			}
+		);
+	}
+
 # L3.1 routing with params
 
 * populating route parameters
