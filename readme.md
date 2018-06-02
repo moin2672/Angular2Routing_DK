@@ -1,3 +1,22 @@
+# L2.1 Routing user login
+Activating a Route with code
+// standard syntax
+this.route.navigate(['/welcome']);    
+// short-cut syntax
+this.route.navigate('/welcome');
+// complex url syntax   
+this.route.navigateByUrl('/welcome'); 
+
+// current route
+http://localhost:3000/products(popup:messages)
+// navigate()
+http://localhost:3000/welcome(popup:messages)
+// navigateByUrl
+http://localhost:3000/welcome
+
+* Hint:
+Router.forChild() access before the Router.forRoot()
+
 # L2.0
  RouterModule.forChild([
       {path: 'products', component: ProductListComponent}
