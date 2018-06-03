@@ -16,9 +16,9 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule.forChild([
       {path: 'products', component: ProductListComponent},
       {
-        path: 'products/:id', 
+        path: 'products/:id',
         component: ProductDetailComponent,
-        resolve:{product: ProductResolver}
+        resolve:{product: 'productProvider'}
       },
       {
         path: 'products/:id/edit',
@@ -35,7 +35,17 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [
     ProductService,
-    ProductResolver
+    ProductResolver,
+    {
+      provide: 'productProvider',
+      useValue: () => {
+        return {
+          id:5,
+          productName: 'Hammer',
+          description: 'Test Description for a hammer'
+        }
+      }
+    }
   ]
 })
 export class ProductModule {}
