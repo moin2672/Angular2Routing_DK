@@ -1,3 +1,10 @@
+# L3.4 reading Query Parameters
+
+* use ActivatedRouteservice
+
+1. import ActivatedRoute
+2. define in constructor
+
 # L3.3 defining query params
 * Defining Query Parameters
 
