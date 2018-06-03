@@ -18,7 +18,7 @@ import { SharedModule } from '../shared/shared.module';
       {
         path: 'products/:id',
         component: ProductDetailComponent,
-        resolve:{product: 'productProvider'}
+        resolve:{product: ProductResolver}
       },
       {
         path: 'products/:id/edit',
@@ -35,17 +35,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   providers: [
     ProductService,
-    ProductResolver,
-    {
-      provide: 'productProvider',
-      useValue: () => {
-        return {
-          id:5,
-          productName: 'Hammer',
-          description: 'Test Description for a hammer'
-        }
-      }
-    }
+    ProductResolver
   ]
 })
 export class ProductModule {}

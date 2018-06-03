@@ -28,7 +28,7 @@ ProductModule = __decorate([
                 {
                     path: 'products/:id',
                     component: product_detail_component_1.ProductDetailComponent,
-                    resolve: { product: 'productProvider' }
+                    resolve: { product: product_resolver_service_1.ProductResolver }
                 },
                 {
                     path: 'products/:id/edit',
@@ -45,17 +45,7 @@ ProductModule = __decorate([
         ],
         providers: [
             product_service_1.ProductService,
-            product_resolver_service_1.ProductResolver,
-            {
-                provide: 'productProvider',
-                useValue: function () {
-                    return {
-                        id: 5,
-                        productName: 'Hammer',
-                        description: 'Test Description for a hammer'
-                    };
-                }
-            }
+            product_resolver_service_1.ProductResolver
         ]
     })
 ], ProductModule);

@@ -1,3 +1,27 @@
+# L4.5 Summary
+
+# Route Resolvers Checklist
+
+# #Building
+* Create an Angular service
+* Implement the Resolve <> interface
+* Add a resolve method
+* Be sure to register the service
+
+# #Configuring
+* Configure using resolve
+* Give each type of data a logical name
+* Specify a reference to the route resolver
+
+# #Reading
+* Read the data from the route
+- Snapshot
+this.product = this.route.snapshot.data['product'];
+- Data Observable
+this.route.data.subscribe(
+data => this.product = data['product'];
+);
+
 # L4.4 Resolver as a function
 
 # L4.3 using subscribe 
