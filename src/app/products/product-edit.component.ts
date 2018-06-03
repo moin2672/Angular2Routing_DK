@@ -21,7 +21,9 @@ export class ProductEditComponent implements OnInit {
                 private router: Router) { }
 
     ngOnInit(): void {
-        this.onProductRetrieved(this.route.snapshot.data['product']); //using snapshot unable to route from product id=1 or anything to add product
+        this.route.data.subscribe(data => {
+            this.onProductRetrieved(data['product']);
+        });
     }
     
     onProductRetrieved(product: IProduct): void {

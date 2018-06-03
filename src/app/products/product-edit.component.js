@@ -21,7 +21,10 @@ var ProductEditComponent = (function () {
         this.pageTitle = 'Product Edit';
     }
     ProductEditComponent.prototype.ngOnInit = function () {
-        this.onProductRetrieved(this.route.snapshot.data['product']); //using snapshot unable to route from product id=1 or anything to add product
+        var _this = this;
+        this.route.data.subscribe(function (data) {
+            _this.onProductRetrieved(data['product']);
+        });
     };
     ProductEditComponent.prototype.onProductRetrieved = function (product) {
         this.product = product;
