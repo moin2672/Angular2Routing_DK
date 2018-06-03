@@ -1,9 +1,11 @@
+# L4.2 using snapshot 
+* unable to route based on id value
+
 # L4.1 route resolver product-details
 * Using a route resolver
 1. Build and register a route resolver service
 2. Add resole to the route configuration
 3. Read the data from ActivatedRoute
-
 
 
 # L3.5 Summary
