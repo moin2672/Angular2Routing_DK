@@ -1,3 +1,33 @@
+# L3.3 defining query params
+* Defining Query Parameters
+
+In template
+<a [routerLink] ="['/products', product.id]"
+   [queryParams]="{filterBy: 'er' , showImage: true}">
+{{product.productName}}
+</a>
+
+In component class
+this.router.navigate(['/products'],
+{
+	queryParams: {filterBy: 'er', showImage: true}
+}
+);
+
+* Retaining Query Parameters (v4+)
+
+Template
+--------
+<a [routerLink] ="['/products']"
+   queryParamsHandling="preserve">
+Back
+</a>
+
+Component class
+---------------
+
+this.router.navigate(['/products'], {queryParamsHandling: 'preserve'});
+
 # L3.2 routing with params using observable
 * Reading Route Parameters
 
