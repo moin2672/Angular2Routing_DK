@@ -1,3 +1,71 @@
+# L3.5 Summary
+
+* Route Parameters Checklist
+
+# # Required Parameters
+* Pass needed data on a route
+Ex: Detail component requires an id
+
+* Required Parameters
+Configure
+---------
+
+{path: 'product/:id', component: ProductDetailComponent}
+
+Populate
+--------
+<a [routerLink]="['/products', product.id]">..</a>
+this.router.navigate(['/products',this.product.id])
+
+Read
+----
+this.route.snapshot.params['id'];
+Or Observable
+-------------
+
+# #Optional Parameters
+
+* Pass optional or complex information to a route
+Eg:
+- Search component passes search criteria to the list component to filter the data
+
+* Optional Parameters
+Not Configured
+--------------
+{path: 'products', component: ProductListComponent}
+
+Populate
+--------
+<a [routerLink]="['/products',{start: startDate, end: endDate}]">...</a>
+this.router.navigate(['/products', {start: startDate, end: endDate}]);
+
+Read
+----
+this.route.snapshot.params['start'];
+Or Observable
+-------------
+
+# # Query Parameters
+Pass optional or complex information to a route that is optionally retained across routes
+Eg: List component passes its current user selections to the Detail component which passes them back
+
+* Query Parameters
+Not Configured
+--------------
+{path: 'products', component: ProductListComponent}
+
+Populate
+--------
+<a [routerLink]="['/products']"
+   [queryParams]="{filterBy: 'x', showImage: true}">...</a>
+this.router.navigate(['/products', queryParams:{filterBy: 'x', showImage: true}]);
+
+Read
+----
+this.route.snapshot.queryParams['filterBy'];
+Or Observable
+-------------
+
 # L3.4 reading Query Parameters
 
 * use ActivatedRouteservice
